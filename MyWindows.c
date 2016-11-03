@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
-                    MyWindows.c -- »ù±¾´°¿ÚÄ£ĞÍ  
-				¡¶Windows ³ÌĞòÉè¼Æ£¨SDK£©¡·ÊÓÆµ½Ì³Ì                    
+                    MyWindows.c -- åŸºæœ¬çª—å£æ¨¡å‹  
+				ã€ŠWindows ç¨‹åºè®¾è®¡ï¼ˆSDKï¼‰ã€‹è§†é¢‘æ•™ç¨‹                    
 --------------------------------------------------------------------*/
 
 #include <windows.h>
@@ -27,12 +27,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 
 	if (!RegisterClass(&wndclass))
 	{
-		MessageBox(NULL, TEXT("Õâ¸ö³ÌĞòĞèÒªÔÚ Windows NT ²ÅÄÜÖ´ĞĞ£¡"), szAppName, MB_ICONERROR);
+		MessageBox(NULL, TEXT("è¿™ä¸ªç¨‹åºéœ€è¦åœ¨ Windows NT æ‰èƒ½æ‰§è¡Œï¼"), szAppName, MB_ICONERROR);
 		return 0;
 	}
 
 	hwnd = CreateWindow(szAppName, 
-		TEXT("ÓãC¹¤×÷ÊÒ"), 
+		TEXT("windowsçª—å£"), 
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 
 		CW_USEDEFAULT, 
@@ -66,7 +66,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_PAINT:
 		hdc = BeginPaint(hwnd, &ps);
 		GetClientRect(hwnd, &rect);
-		DrawText(hdc, TEXT("´ó¼ÒºÃ£¬ÕâÊÇÎÒµÄµÚÒ»¸ö´°¿Ú³ÌĞò£¡"), -1, &rect,
+		DrawText(hdc, TEXT("å¤§å®¶å¥½ï¼Œè¿™æ˜¯æˆ‘çš„ç¬¬ä¸€ä¸ªçª—å£ç¨‹åºï¼"), -1, &rect,
 			DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 		EndPaint(hwnd, &ps);
 		return 0;
